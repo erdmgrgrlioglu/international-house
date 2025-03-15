@@ -25,7 +25,7 @@ services:
       ADMIN_PASSWORD: admin
       JWT_SECRET: WZD+yI3tlH3YKeq2pQ9y8IqaRAW/my8S55+HJKyqcu0= # !!! Change before deployement!!!!
       JWT_EXPIRATION: 86400000
-      SPRING_JPA_HIBERNATE_DLL_AUTO: update
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
     ports:
       - "8080:8080"
 
