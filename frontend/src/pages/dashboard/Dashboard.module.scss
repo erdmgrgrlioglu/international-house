@@ -1,0 +1,46 @@
+@use "sass:map";
+@use "/src/variables" as *;
+
+.page {
+  min-height: 90vh;
+  & > div {
+    padding-right: 3.75rem;
+    padding-left: 3.75rem;
+  }
+
+  .nav {
+    border-bottom: 1px solid map.get($colors, "def_light_gray");
+    display: flex;
+    flex-direction: row;
+
+    .profile {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      margin-right: auto;
+    }
+
+    .tab,
+    .active {
+      width: max-content;
+      padding: 1rem;
+      cursor: pointer;
+      color: map.get($colors, "def_red");
+
+      &:hover {
+        background-color: map.get($colors, "def_light_gray");
+      }
+    }
+    .active {
+      background-color: map.get($colors, "def_light_gray");
+    }
+
+    .bell {
+      color: map.get($colors, "def_red");
+    }
+  }
+
+  .panel {
+    padding: 1rem 3.75rem;
+  }
+}

@@ -1,0 +1,17 @@
+@use "sass:map";
+@use "/src/variables" as *;
+
+.footer {
+  position: relative;
+  height: 120px;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: map.get($colors, "def_white");
+  background-color: map.get($colors, "def_red");
+  div {
+    margin: auto;
+    margin-top: 10px;
+  }
+}

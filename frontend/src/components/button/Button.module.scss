@@ -1,0 +1,40 @@
+@use "sass:map";
+@use "/src/variables" as *;
+
+.selected,
+.button {
+  border: 2px solid transparent;
+
+  padding: 1em 1.5em;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1;
+  text-transform: uppercase;
+
+  color: map.get($colors, "def_light_red");
+  border-color: map.get($colors, "def_light_red");
+  background-color: transparent;
+
+  transition: color 100ms ease-in-out, background-color 100ms ease-in-out,
+    border-color 100ms ease-in-out, box-shadow 100ms ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    color: map.get($colors, "def_white");
+    border-color: map.get($colors, "def_light_red");
+    background-color: map.get($colors, "def_light_red");
+  }
+
+  &:disabled {
+    color: map.get($colors, "def_gray");
+    border-color: map.get($colors, "def_gray");
+    background-color: map.get($colors, "def_white");
+    cursor: not-allowed;
+  }
+}
+
+.selected {
+  color: map.get($colors, "def_white");
+  border-color: map.get($colors, "def_light_red");
+  background-color: map.get($colors, "def_light_red");
+}

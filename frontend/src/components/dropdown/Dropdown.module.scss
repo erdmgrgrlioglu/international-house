@@ -1,0 +1,45 @@
+@use "sass:map";
+@use "/src/variables" as *;
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+
+  svg {
+    vertical-align: middle;
+  }
+
+  .text {
+    color: map.get($colors, "def_light_red");
+    text-decoration: underline;
+  }
+
+  cursor: pointer;
+
+  &:hover .content {
+    display: block;
+    position: absolute;
+
+    max-height: 40vh;
+    width: max-content;
+    overflow-y: scroll;
+    padding: 5px;
+
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    font-size: 1.2rem;
+    background-color: map.get($colors, "def_white");
+
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    div:hover {
+      background-color: map.get($colors, "def_light_gray");
+    }
+  }
+
+  .content {
+    display: none;
+  }
+}

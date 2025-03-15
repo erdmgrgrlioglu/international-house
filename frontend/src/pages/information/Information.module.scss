@@ -1,0 +1,13 @@
+@use "sass:map";
+@use "/src/variables" as *;
+
+.page {
+  padding: 0 3.75rem;
+  min-height: 80vh;
+  a {
+    color: map.get($colors, "def_red");
+    &:focus {
+      color: map.get($colors, "def_light_red");
+    }
+  }
+}

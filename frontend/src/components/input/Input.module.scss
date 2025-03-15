@@ -1,0 +1,46 @@
+@use "sass:map";
+@use "/src/variables" as *;
+
+.input {
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1em 1.5em;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1;
+  text-transform: uppercase;
+  overflow: hidden;
+
+  color: map.get($colors, "def_light_red");
+  border-color: map.get($colors, "def_light_red");
+  background-color: transparent;
+
+  transition: color 100ms ease-in-out, background-color 100ms ease-in-out,
+    border-color 100ms ease-in-out, box-shadow 100ms ease-in-out;
+  cursor: pointer;
+}
+
+.input:hover {
+  color: map.get($colors, "def_white");
+  border-color: map.get($colors, "def_light_red");
+  background-color: map.get($colors, "def_light_red");
+}
+
+.field {
+  width: 100%;
+  margin: 0 0 0 10px !important;
+  border: none;
+  background-image: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1;
+  //text-transform: uppercase;
+  color: map.get($colors, "def_light_red");
+}

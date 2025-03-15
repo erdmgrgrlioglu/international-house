@@ -1,0 +1,67 @@
+@use "sass:map";
+@use "/src/variables" as *;
+
+@font-face {
+  font-family: "Roboto";
+  src: url(./fonts/Roboto-Thin.ttf);
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(./fonts/Roboto-Thin.ttf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(./fonts/Roboto-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(./fonts/Roboto-Medium.ttf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(./fonts/Roboto-Bold.ttf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(./fonts/Roboto-Black.ttf);
+  font-weight: 900;
+}
+
+html {
+  height: fit-content;
+
+  background-color: map.get($colors, "def_bg");
+
+  font-family: "Roboto" !important;
+  font-size: 1rem;
+  font-weight: 400;
+  text-decoration: none;
+
+  a {
+    color: map.get($colors, "def_red") !important;
+    text-decoration: none;
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  body {
+    max-width: 1300px;
+    & > div {
+      overflow-x: hidden;
+    }
+    background-color: map.get($colors, "def_white");
+    margin: auto;
+  }
+}

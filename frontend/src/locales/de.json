@@ -1,0 +1,134 @@
+{
+  "welcome": {
+    "navbar": "Internationales Haus",
+    "title": "Willkommen im Internationales Haus der TU Darmstadt",
+    "book_button": "Vereinbaren Sie einen Beratungstermin",
+    "info_button": "Information"
+  },
+  "login": {
+    "title": "Anmelden",
+    "username": "Benutzername",
+    "password": "Passwort",
+    "next": "Weiter",
+    "errorMessage": "Benutzername oder Passwort ist falsch"
+  },
+  "dashboard": {
+    "signedInAs": "Angemeldet als: ",
+    "signOut": "Abmelden",
+    "tabs": {
+      "calendar": "Kalender",
+      "visitors": "Besucher",
+      "manageUsers": "Benutzer verwalten",
+      "manageConsultationHours": "Sprechstunden verwalten",
+      "manageInfoPage": "Info Seite verwalten",
+      "changeLanguage": "English"
+    }
+  },
+  "calendar": {
+    "modal": {
+      "title":{
+        "create":"Erstellen",
+        "update": "Aktualisieren",
+        "sure": "Sind Sie Sicher?"
+      },
+      "description": "Erklärung",
+      "start": "Beginnt",
+      "end": "Endet",
+      "repeat": {
+        "title":"Wiederholung",
+        "options": {
+          "no": "Keine Widerholung",
+          "daily": "Täglich",
+          "weekly": "Wöchentich"
+        }
+      },
+      "consultation": "Beratungen",
+      "canceled": {
+        "text":"Abgesagt",
+        "reason":"Grund für die Stornierung",
+        "no_reason": "Kein Grund.",
+        "result": "Das Löschen einer Beratung am selben Tag führt zur Stornierung.",
+        "deleteConfirm": "Möchten Sie diese Sprechstunde wirklich löschen?"
+    }
+  },
+  "alerts": {
+      "endDateError": "Das Enddatum darf nicht vor dem Startdatum liegen!",
+      "emptyConsultationError": "Die Sprechstunde darf nicht leer sein!",
+      "createSuccess": "Sprechstunde wurde erfolgreich erstellt!",
+      "updateSuccess": "Sprechstunde erfolgreich aktualisiert!",
+      "deleteSuccess": "Sprechstunde wurde gelöscht",
+      "cancelSuccess": "Sprechstunde wurde abgesagt"
+    },
+    "today": "Heute",
+    "back": "Zurück",
+    "next": "Nächster",
+    "month": "Monat",
+    "week": "Woche",
+    "day": "Tag",
+    "agenda": "Terminübersicht",
+    "allDay": "Ganzer Tag"
+  },
+
+  "consultationsPage": {
+    "description": "Erklärung",
+    "shortVersion": "Abkürzung",
+    "color": "Farbe",
+    "defaultRoom":"Standardzimmer",
+    "addDefault": "Standard Hinzufügen",
+    "add": "Sprechstundentyp Hinzufügen",
+    "edit": "Sprechstundetyp Bearbeiten",
+    "dailyVisitorCount":"Tägliche zahl der Besucher",
+    "totalVisitorCount":"Gesamtzahl der Besucher"
+  },
+  "userPage": {
+    "userName": "Benutzername",
+    "password": "Passwort",
+    "role": "Rolle",
+    "employee": "Mitarbeiter:in",
+    "admin": "Admin",
+    "add": "Mitarbeiter hinzufügen",
+    "edit": "Bearbeiten"
+  },
+  "visitorsPage": {
+    "waiting": "Wartend",
+    "called": "In einer Sprechstunde",
+    "call": "Reinrufen",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "no_visitor": "Derzeit sind keine Besucher in der Warteschlange",
+    "inLineFor":"Wartet",
+    "beingCalled":"Reingerufen"
+  },
+  "button": {
+    "create": "Erstellen",
+    "save": "Speichern",
+    "edit": "Bearbeiten",
+    "delete": "Löschen"
+  },
+  "book": {
+        "navbar": "Buchung",
+        "title": "Verfügbare Beratungen Heute",
+        "not_available": "Für heute ist derzeit keine Beratung geplant. Bitte beachten Sie die Informationen.",
+        "canceled": "Abgesagt",
+        "in_queue": "Sie sind in der Warteschlange",
+        "code": "Ihre Code Lautet",
+        "modal": {
+            "info": {
+                "title": "Beschreibung von der Beratung",
+                "reason": "Begründung für Absage",
+                "no_reason": "Kein Grund angegeben.", 
+                "no_description": "Keine Beschreibung angegeben"
+            },
+            "confirm":{
+                "title": "Buchung Bestaetigen",
+                "request": "Sie haben eine Beratung angefragt bei",
+                "proceed": "Möchten Sie wirklich fortfahren?",
+                "yes_button": "Ja",
+                "no_button": "Nein"
+            }
+        }
+    },
+    "info": {
+        "navbar": "Information"
+    }
+}

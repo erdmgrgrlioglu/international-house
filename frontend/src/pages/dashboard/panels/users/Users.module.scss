@@ -1,0 +1,28 @@
+@use "sass:map";
+@use "/src/variables" as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  .user {
+    .box {
+      min-width: fit-content;
+      border: 1px solid map.get($colors, "def_bg");
+      padding: 1rem;
+      display: flex;
+
+      & > div {
+        margin-right: auto;
+      }
+
+      button {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  & > button {
+    margin: auto;
+    margin-top: 10px;
+  }
+}
