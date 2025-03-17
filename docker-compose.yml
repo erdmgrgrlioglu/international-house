@@ -18,12 +18,12 @@ services:
       - redis
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/international-house
-      SPRING_DATASOURCE_USERNAME: postgres # !!! Change before deployement has to be same with POSTGRES_USER!!!!
-      SPRING_DATASOURCE_PASSWORD: postgres # !!! Change before deployement has to be same with POSTGRES_PASSWORD!!!!
+      SPRING_DATASOURCE_USERNAME: postgres # !!! Change before deployment has to be same with POSTGRES_USER!!!!
+      SPRING_DATASOURCE_PASSWORD: postgres # !!! Change before deployment has to be same with POSTGRES_PASSWORD!!!!
       SPRING_DATA_REDIS_HOST: redis
       ADMIN_USERNAME: admin
       ADMIN_PASSWORD: admin
-      JWT_SECRET: WZD+yI3tlH3YKeq2pQ9y8IqaRAW/my8S55+HJKyqcu0= # !!! Change before deployement!!!!
+      JWT_SECRET: WZD+yI3tlH3YKeq2pQ9y8IqaRAW/my8S55+HJKyqcu0= # !!! Change before deployment!!!!
       JWT_EXPIRATION: 86400000
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
     ports:
@@ -34,8 +34,8 @@ services:
     restart: unless-stopped
     environment:
       POSTGRES_DB: international-house
-      POSTGRES_USER: postgres # !!! Change before deployement!!!!
-      POSTGRES_PASSWORD: postgres # !!! Change before deployement!!!!
+      POSTGRES_USER: postgres # !!! Change before deployment!!!!
+      POSTGRES_PASSWORD: postgres # !!! Change before deployment!!!!
 
   redis:
     image: redis
