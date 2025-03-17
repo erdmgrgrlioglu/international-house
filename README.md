@@ -1,4 +1,4 @@
-# International House Managament Software – Technical Documentation
+# International House Management Software – Technical Documentation
 
 This documentation provides a comprehensive overview of the project, its architecture, key components, and steps for local execution. It serves as the central source of information for developers, administrators, and stakeholders.
 
@@ -32,7 +32,7 @@ The **International House Managament Software** is a full stack web application 
 
 ---
 
-## 2. Deployment
+## Deployment
 
 ### Dependencies
 Project comes with one docker-compose.yml file that should take care of everything.
@@ -82,7 +82,7 @@ After successfully running the `docker-compose.yml` file, visit `http://localhos
 
 ---
 
-## 3. Development
+## Development
 
 ### Frontend
 
