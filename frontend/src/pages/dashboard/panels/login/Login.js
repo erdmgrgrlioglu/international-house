@@ -46,11 +46,12 @@ export default function LoginPanel({ onLogin }) {
               password: password,
             })
               .then((response) => {
-                //Cookies.set("token", response);
-                document.cookie =
-                  "token=" +
-                  response +
-                  "; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
+                Cookies.set("token", response, {
+                  expires: 7,
+                  path: "/",
+                  secure: false,
+                  sameSite: "Strict",
+                });
                 get("auth/profile")
                   .then((response) => onLogin(response))
                   .catch((error) => {
