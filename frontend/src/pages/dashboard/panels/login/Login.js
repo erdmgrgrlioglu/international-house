@@ -49,7 +49,12 @@ export default function LoginPanel({ onLogin }) {
                 Cookies.set("token", response);
                 get("auth/profile")
                   .then((response) => onLogin(response))
-                  .catch((error) => console.error("Error:", error));
+                  .catch((error) => {
+                    console.error(error);
+                    alert(
+                      "Cookies are not allowed in the browser! please allow cookies!"
+                    );
+                  });
               })
               .catch(() => alert("Username or password is false."))
           }
