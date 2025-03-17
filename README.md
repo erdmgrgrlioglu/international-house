@@ -78,6 +78,7 @@ Confirm containers are running:
 ```bash
 docker stats
 ```
+After successfully running the `docker-compose.yml` file, visit `http://localhost:3000` or `http://[YOUR-HOST-MACHINE-IPv4-ADDRESS]:3000` in your browser to view the website.
 
 ---
 
@@ -409,6 +410,13 @@ This section outlines planned features and improvements for the project. These r
 
 2. **Better Password Encryption:**  
    Upgrade password encryption to use cutting-edge methods to guard against increasingly powerful attackers, ensuring higher levels of security.
+
+3. **Secure HTTP Protocol (HTTPS):**  
+   The current setup does not utilize HTTPS, which exposes it to potential Session Hijacking, Eavesdropping or Man-in-the-Middle (MITM) attacks. Implementing HTTPS is essential to secure data transmission and prevent such vulnerabilities.
+
+4. **UI Rework:**  
+   Revise the user interface to eliminate visual artifacts, refine the overall design, and enhance mobile responsiveness for a better user experience.
+
 
 ## Additional Notes
 - **Initialization:**  
