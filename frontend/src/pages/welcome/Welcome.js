@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { AccesabilityButton, Button } from "../../components";
+import { AccessibilityButton, Button } from "../../components";
 
 import classes from "./Welcome.module.scss";
 
@@ -23,7 +23,7 @@ export default function WelcomePage() {
           text={t("welcome.info_button")}
         />
       </div>
-      <AccesabilityButton type="language" />
+      <AccessibilityButton type="language" />
     </>
   );
 }

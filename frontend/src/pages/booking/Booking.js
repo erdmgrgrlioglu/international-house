@@ -4,7 +4,7 @@ import { FaInfoCircle } from "react-icons/fa";
 
 import { useDatabase, get, push } from "../../database/database";
 
-import { AccesabilityButton, Button, Modal } from "../../components";
+import { AccessibilityButton, Button, Modal } from "../../components";
 import Timeout from "../../components/timeout/Timeout";
 
 import classes from "./Booking.module.scss";
@@ -72,8 +72,8 @@ export default function BookingPage() {
   return (
     <div className={classes.page}>
       <Timeout />
-      <AccesabilityButton type="home" />
-      <AccesabilityButton type="language" />
+      <AccessibilityButton type="home" />
+      <AccessibilityButton type="language" />
 
       {modal === "info" && (
         <Modal

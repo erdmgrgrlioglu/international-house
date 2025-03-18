@@ -2,11 +2,12 @@ import { useNavigate } from "react-router-dom";
 import i18n from "i18next";
 
 import { TiHome } from "react-icons/ti";
-import { FaLanguage } from "react-icons/fa";
+import { MdLanguage } from "react-icons/md";
 
-import classes from "./Accesability.module.scss";
 
-export default function AccesabilityButton(props) {
+import classes from "./Accessibility.module.scss";
+
+export default function AccessibilityButton(props) {
   const navigate = useNavigate();
 
   if (props.type === "home") {
@@ -27,7 +28,7 @@ export default function AccesabilityButton(props) {
         }
         className={classes.language}
       >
-        <FaLanguage className={classes.icon} />
+        <MdLanguage className={classes.icon} />
       </button>
     );
 

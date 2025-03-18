@@ -5,7 +5,7 @@ services:
     build: 
       context: ./frontend # dockerfile relative path
       args:  # This is host machines (ip address):(backend port) in the local network. look up "ifconfig"
-        IP_AND_PORT: 10.42.0.1:8080 
+        IP_AND_PORT:  :8080 
     restart: unless-stopped
     ports:
       - "3000:3000"  # Map port 3000 from host machine to 3000 on your container
@@ -18,14 +18,14 @@ services:
       - redis
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/international-house
-      SPRING_DATASOURCE_USERNAME: postgres # !!! Change before deployement has to be same with POSTGRES_USER!!!!
-      SPRING_DATASOURCE_PASSWORD: postgres # !!! Change before deployement has to be same with POSTGRES_PASSWORD!!!!
+      SPRING_DATASOURCE_USERNAME: postgres # !!! Change before deployment has to be same with POSTGRES_USER!!!!
+      SPRING_DATASOURCE_PASSWORD: postgres # !!! Change before deployment has to be same with POSTGRES_PASSWORD!!!!
       SPRING_DATA_REDIS_HOST: redis
       ADMIN_USERNAME: admin
       ADMIN_PASSWORD: admin
-      JWT_SECRET: WZD+yI3tlH3YKeq2pQ9y8IqaRAW/my8S55+HJKyqcu0= # !!! Change before deployement!!!!
+      JWT_SECRET: WZD+yI3tlH3YKeq2pQ9y8IqaRAW/my8S55+HJKyqcu0= # !!! Change before deployment!!!!
       JWT_EXPIRATION: 86400000
-      SPRING_JPA_HIBERNATE_DLL_AUTO: update
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
     ports:
       - "8080:8080"
 
@@ -34,8 +34,8 @@ services:
     restart: unless-stopped
     environment:
       POSTGRES_DB: international-house
-      POSTGRES_USER: postgres # !!! Change before deployement!!!!
-      POSTGRES_PASSWORD: postgres # !!! Change before deployement!!!!
+      POSTGRES_USER: postgres # !!! Change before deployment!!!!
+      POSTGRES_PASSWORD: postgres # !!! Change before deployment!!!!
 
   redis:
     image: redis

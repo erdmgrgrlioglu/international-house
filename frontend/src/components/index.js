@@ -5,7 +5,7 @@ import License from "./license/License";
 import Dropdown from "./dropdown/Dropdown";
 import Input from "./input/Input";
 import Modal from "./modal/Modal";
-import AccesabilityButton from "./accesability/Accesability";
+import AccessibilityButton from "./accessibility/Accessibility";
 
 // index file for components. shortens the importpath on other files.
 export {
@@ -16,5 +16,5 @@ export {
   Dropdown,
   Input,
   Modal,
-  AccesabilityButton,
+  AccessibilityButton,
 };

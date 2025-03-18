@@ -11,15 +11,27 @@ export default function Input(props) {
   return (
     <label className={classes.input}>
       {props.text}:
-      <input
-        ref={props.ref}
-        value={props.value}
-        name={props.name}
-        placeholder={props.placeholder}
-        onClick={props.onClick}
-        onChange={props.onChange}
-        className={`${classes.field} ${props.className}`}
-      />
+      <div className={classes.inputContainer}>
+        <input
+          type={props.type || "text"}
+          ref={props.ref}
+          value={props.value}
+          name={props.name}
+          placeholder={props.placeholder}
+          onClick={props.onClick}
+          onChange={props.onChange}
+          className={`${classes.field} ${props.className}`}
+        />
+        {props.toggle && (
+          <button
+            type="button"
+            className={classes.toggle}
+            onClick={props.onToggle}
+          >
+            {props.toggle}
+          </button>
+        )}
+      </div>
     </label>
   );
 }

@@ -1,4 +1,4 @@
-# International House Managament Software – Technical Documentation
+# International House Management Software – Technical Documentation
 
 This documentation provides a comprehensive overview of the project, its architecture, key components, and steps for local execution. It serves as the central source of information for developers, administrators, and stakeholders.
 
@@ -9,16 +9,16 @@ This documentation provides a comprehensive overview of the project, its archite
 2. [Deployment](#deployment)
 3. [Development](#development)
     - [Frontend](#frontend)
-        - [Prerequisites](#frontend-prerequisites)
-        - [Key Components and Files](#frontend-files)
+        - [Frontend Prerequisites](#frontend-prerequisites)
+        - [Frontend Key Components and Files](#frontend-key-components-and-files)
     - [Backend](#backend)
-        - [Prerequisites](#backend-prerequisites)
-        - [Key Components and Files](#backend-files)
+        - [Backend Prerequisites](#backend-prerequisites)
+        - [Backend Key Components and Files](#backend-key-components-and-files)
             - [Authentication & Security](#authentication--security)
-            - [Controller-Service-Entity Layers](#controller-service-entity-layers)
             - [API Documentation](#api-documentation)
+            - [Controller-Service-Entity Layers](#controller-service-entity-layers)
             - [Error Handling](#error-handling)
-    - [Docker-Based Environment](#docker-based-environment)
+    - [Docker Environment](#docker-environment)
 
 4. [Additional Notes](#additional-notes)
 
@@ -32,7 +32,7 @@ The **International House Managament Software** is a full stack web application 
 
 ---
 
-## 2. Deployment
+## Deployment
 
 ### Dependencies
 Project comes with one docker-compose.yml file that should take care of everything.
@@ -50,7 +50,21 @@ docker-compose --version
 
 ### Start Services with Docker Compose
 
-The services are configured using the `docker-compose.yml` file. Start them by running:
+The services are configured using the `docker-compose.yml` file.
+
+**!!!Change host ip address in docker-compose.yml to machines ip address!!!**
+
+On Windows:
+```bash
+ipconfig
+```
+
+On Linux:
+```bash
+ifconfig
+```
+
+Start services them by running:
 
 ```bash
 docker-compose up
@@ -64,14 +78,15 @@ Confirm containers are running:
 ```bash
 docker stats
 ```
+After successfully running the `docker-compose.yml` file, visit `http://localhost:3000` or `http://[YOUR-HOST-MACHINE-IPv4-ADDRESS]:3000` in your browser to view the website.
 
 ---
 
-## 3. Development
+## Development
 
 ### Frontend
 
-#### Prerequisites
+#### Frontend Prerequisites
 
 Before setting up the project, ensure you have the following tools installed:
 
@@ -108,7 +123,7 @@ This will start the React development server, and you can view the application a
 
 ---
 
-#### Key Components and Files
+#### Frontend Key Components and Files
 
 The project is organized into the following key folders:
 
@@ -130,7 +145,7 @@ The project is organized into the following key folders:
 
 ### Backend
 
-#### Prerequisites
+#### Backend Prerequisites
 
 Before setting up the project, ensure you have the following tools installed:
 
@@ -182,15 +197,14 @@ Once the application starts successfully, all necessary services should be runni
 - **Backend API Status:** The API documentation should be available at `http://localhost:8080/swagger-ui/index.html`.
 - **Docker Services:** Ensure PostgreSQL and Redis are still active by checking Docker's active containers:
   ```bash
-  docker ps
+  docker stats
   ```
 With these steps, you can successfully set up and run the application. If any issue arises, check the application logs in the IDE or the terminal for troubleshooting.
 
-#### Key Components and Files
+#### Backend Key Components and Files
 
 ##### Architecture and Technologies
 
-- **React** for dynamic webpages.
 - **Authentication** using JSON Web Tokens (JWT).
 - **CRUD operations** for endpoints
 - **Swagger/OpenAPI** integration for API documentation.
@@ -206,6 +220,25 @@ The application uses the following frameworks and tools:
 - **ModelMapper** – Simplifies mapping between DTOs and entities.
 
 The backend follows the **Controller-Service-Repository (CSR)** design pattern, which ensures clean separation between business logic, data management, and API endpoints.
+
+##### API Documentation
+
+The application is documented using **Swagger/OpenAPI**. Accessible at:
+
+ ```
+  http://localhost:8080/swagger-ui/index.html
+  ```
+
+This interface allows you to view and test all available endpoints.
+
+Endpoints:
+- `/api/auth/*` – Authentication and profile management.
+- `/api/employees/*` – Employee CRUD operations.
+- `/api/visitors/*` – Visitor management.
+- `/api/information/*` – Multilingual system information.
+- `/api/consultations/*` – Manage scheduled consultation areas (eg. Krankenkasse).
+- `/api/consultation/events/*` – Manage a single consultation.
+- `/api/health/*` – Checks the operational status of the API.
 
 ##### Authentication & Security
 
@@ -349,36 +382,13 @@ By centralizing exception handling, the application reduces redundancy and provi
 
 ---
 
-### Docker-Based Environment
+### Docker Environment
 - There are 4 services that are interconnected with one `docker-compose.yml` file.
-    1. Frontend (see `internationales-haus-checkin/dockerfile`)
-    2. Backend (see `internationales-haus-backend/dockerfile`)
+    1. Frontend (see `frontend/dockerfile`)
+    2. Backend (see `backend/dockerfile`)
     3. Database `PostgreSQL`
     4. Redis-Database `Redis`
 - The `docker-compose.yml` builds Frontend and Backend from docker files and starts alongside the supporting services (Redis, PostgreSQL).
-
-
----
-## **API Documentation**
-
-The application is documented using **Swagger/OpenAPI**. Accessible at:
-
- ```
-  http://localhost:8080/swagger-ui/index.html
-  ```
-
-This interface allows you to view and test all available endpoints.
-
-Endpoints:
-- `/api/auth/*` – Authentication and profile management.
-- `/api/employees/*` – Employee CRUD operations.
-- `/api/visitors/*` – Visitor management.
-- `/api/information/*` – Multilingual system information.
-- `/api/consultations/*` – Manage scheduled consultation areas (eg. Krankenkasse).
-- `/api/consultation/events/*` – Manage a single consultation.
-- `/api/health/*` – Checks the operational status of the API.
-
----
 
 ## **Future Features & Development Plans**
 
@@ -401,9 +411,31 @@ This section outlines planned features and improvements for the project. These r
 2. **Better Password Encryption:**  
    Upgrade password encryption to use cutting-edge methods to guard against increasingly powerful attackers, ensuring higher levels of security.
 
----
+3. **Secure HTTP Protocol (HTTPS):**  
+   The current setup does not utilize HTTPS, which exposes it to potential Session Hijacking, Eavesdropping or Man-in-the-Middle (MITM) attacks. Implementing HTTPS is essential to secure data transmission and prevent such vulnerabilities.
 
-## **Further Readings**
+4. **UI Rework:**  
+   Revise the user interface to eliminate visual artifacts, refine the overall design, and enhance mobile responsiveness for a better user experience.
+
+
+## Additional Notes
+- **Initialization:**  
+  The system includes automatic **admin creation** at startup via the `AppInitializerServiceImpl`. Default admin credentials are fetched from environment variables.\
+  The application supports **CORS configurations** (`WebConfig.java`) for cross-origin requests, allowing frontend integrations.
+
+- **Error Handling:**  
+  The application employs an error-handling Spring Boot Starter that ensures consistent HTTP error codes and detailed error descriptions are returned.
+
+- **Security:**  
+  Robust security is enforced via modern authentication and authorization mechanisms, including JWT validation, Redis-backed session management, and Spring Security to protect endpoints from unauthorized access.
+
+- **Logging and Monitoring:**  
+  The application is production-ready with support for HTTP/2, comprehensive logging configurations, and Actuator endpoints for monitoring.
+
+- **Extensibility and Maintainability:**  
+  With a modular design and clearly separated concerns, the system is highly extensible and maintainable, facilitating the addition of new features and modifications with minimal impact on existing functionality.
+
+#### Further Readings
 
 Here are some useful links to official documentation and resources for the technologies used in the project:
 
@@ -430,6 +462,7 @@ Here are some useful links to official documentation and resources for the techn
 
 ---
 
+<<<<<<< HEAD
 ## Additional Notes
 - **Initialization:**  
   The system includes automatic **admin creation** at startup via the `AppInitializerServiceImpl`. Default admin credentials are fetched from environment variables.\
@@ -447,6 +480,18 @@ Here are some useful links to official documentation and resources for the techn
 - **Extensibility and Maintainability:**  
   With a modular design and clearly separated concerns, the system is highly extensible and maintainable, facilitating the addition of new features and modifications with minimal impact on existing functionality.
 
+- **Kiosk Mode Browser:**
+Since there will be a self-service kiosk, consider running the web app in Chromium kiosk mode:
+```bash
+  chromium-browser --kiosk --incognito --disable-pinch --overscroll-history-navigation=0 http://localhost:3000
+```
+  For Windows you can use a shortcut of Chromium with a set Target field:
+   `"..\Chromium\Application\chrome.exe --kiosk --incognito --disable-pinch --overscroll-history-navigation=0 http://localhost:3000`
+  This removes UI controls like the address bar, tabs, and navigation buttons. It also disables the pinch-to-zoom and the swipe-to-navigate functionalities. To exit Kiosk Mode use `Alt + F4` or terminal/task manager to kill the process.
+  Be sure to auto-launch the browser in kiosk mode when the system starts.
+
 ---
 
+=======
+>>>>>>> fetch_head
 This technical documentation details the structure and functioning of the International House Backend System, along with the necessary steps for local and containerized deployment. For any further questions, please contact the development or operations team.

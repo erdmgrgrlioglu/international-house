@@ -5,7 +5,7 @@ import { get, useDatabase } from "../../database/database";
 
 import Timeout from "../../components/timeout/Timeout";
 
-import { AccesabilityButton } from "../../components";
+import { AccessibilityButton } from "../../components";
 
 import classes from "./Information.module.scss";
 
@@ -36,8 +36,8 @@ export default function InformationPage() {
               : "",
         }}
       ></div>
-      <AccesabilityButton type="home" />
-      <AccesabilityButton type="language" />
+      <AccessibilityButton type="home" />
+      <AccessibilityButton type="language" />
     </>
   );
 }
