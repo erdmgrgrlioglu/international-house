@@ -20,7 +20,7 @@ export default function AccessibilityButton(props) {
 
   if (props.type === "language")
     return (
-      <button
+      <button 
         onClick={() =>
           i18n.language === "en"
             ? i18n.changeLanguage("de")
@@ -28,7 +28,7 @@ export default function AccessibilityButton(props) {
         }
         className={classes.language}
       >
-        <MdLanguage className={classes.icon} />
+        <MdLanguage aria-label="globe" className={classes.icon} />
       </button>
     );
 

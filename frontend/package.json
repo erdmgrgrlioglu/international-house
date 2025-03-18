@@ -3,9 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.6.1",
     "i18next": "^24.2.2",
     "i18next-browser-languagedetector": "^8.0.3",
     "i18next-http-backend": "^3.0.2",
+    "jest-css-modules-transform": "^4.4.2",
     "js-cookie": "^3.0.5",
     "punycode": "^2.3.1",
     "react": "^18.3.1",
@@ -46,6 +51,24 @@
     ]
   },
   "devDependencies": {
-    "jest": "^27.5.1"
+    "@babel/plugin-transform-private-property-in-object": "^7.25.9",
+    "@testing-library/react": "^16.1.0",
+    "jest": "^27.5.1",
+    "jest-css-modules-transform": "^4.4.2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest",
+      "^.+\\.scss$": "jest-css-modules-transform"
+    },
+    "moduleNameMapper": {
+      "\\.module\\.scss$": "identity-obj-proxy",
+      "\\.(css|scss)$": "identity-obj-proxy",
+      "\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/mocks/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/mocks/fileMock.js"
+    },
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom"
+    ]
   }
 }

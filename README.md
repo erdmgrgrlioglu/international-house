@@ -462,8 +462,6 @@ Here are some useful links to official documentation and resources for the techn
 
 ---
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ## Additional Notes
 - **Initialization:**  
   The system includes automatic **admin creation** at startup via the `AppInitializerServiceImpl`. Default admin credentials are fetched from environment variables.\
@@ -493,8 +491,4 @@ Since there will be a self-service kiosk, consider running the web app in Chromi
 
 ---
 
-=======
->>>>>>> fetch_head
-=======
->>>>>>> origin/main
 This technical documentation details the structure and functioning of the International House Backend System, along with the necessary steps for local and containerized deployment. For any further questions, please contact the development or operations team.
