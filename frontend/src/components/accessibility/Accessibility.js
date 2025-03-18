@@ -13,7 +13,7 @@ export default function AccessibilityButton(props) {
   if (props.type === "home") {
     return (
       <button onClick={() => navigate("/")} className={classes.home}>
-        <TiHome className={classes.icon} />
+        <TiHome aria-label="home" className={classes.icon} />
       </button>
     );
   }
