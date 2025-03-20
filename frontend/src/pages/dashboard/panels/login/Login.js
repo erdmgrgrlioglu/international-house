@@ -41,7 +41,7 @@ export default function LoginPanel({ onLogin }) {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           toggle={
-            showPassword ? <FaRegEyeSlash /> : <FaRegEye />
+            showPassword ? <FaRegEye /> : <FaRegEyeSlash />
           }
           onToggle={() => setShowPassword((prev) => !prev)}
         />

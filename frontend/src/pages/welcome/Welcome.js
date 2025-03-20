@@ -23,7 +23,7 @@ export default function WelcomePage() {
           text={t("welcome.info_button")}
         />
       </div>
-      <AccessibilityButton aria-label="lang-button" type="language" />
+      <AccessibilityButton type="language" />
     </>
   );
 }

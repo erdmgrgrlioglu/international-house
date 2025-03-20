@@ -31,6 +31,7 @@
 
     .info {
       color: map.get($colors, "def_light_red");
+      cursor: pointer;
     }
 
     .canceled {
