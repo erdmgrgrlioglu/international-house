@@ -150,7 +150,6 @@ test('adds visitor on confirmation modal yes button click', async () => {
 
   const yesButton = await screen.findByText(/Yes/i);
   expect(yesButton).toBeInTheDocument();
-  console.log(await screen.findByText(/Yes/i));
   fireEvent.click(yesButton);
 
   expect(push).toHaveBeenCalled();
