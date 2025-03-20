@@ -8,7 +8,7 @@ export default function Timeout() {
   useEffect(() => {
     const resetTimer = () => {
       clearTimeout(timeout);
-      timeout = setTimeout(() => navigate("/"), 30000); //30 seconds
+      timeout = setTimeout(() => navigate("/"), 120000); //120 seconds
     };
 
     const events = ["mouseover", "keydown", "click", "scroll", "touchstart"];

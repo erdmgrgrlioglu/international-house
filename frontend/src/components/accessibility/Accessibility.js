@@ -2,24 +2,25 @@ import { useNavigate } from "react-router-dom";
 import i18n from "i18next";
 
 import { TiHome } from "react-icons/ti";
-import { FaLanguage } from "react-icons/fa";
+import { MdLanguage } from "react-icons/md";
 
-import classes from "./Accesability.module.scss";
 
-export default function AccesabilityButton(props) {
+import classes from "./Accessibility.module.scss";
+
+export default function AccessibilityButton(props) {
   const navigate = useNavigate();
 
   if (props.type === "home") {
     return (
       <button onClick={() => navigate("/")} className={classes.home}>
-        <TiHome className={classes.icon} />
+        <TiHome aria-label="home" className={classes.icon} />
       </button>
     );
   }
 
   if (props.type === "language")
     return (
-      <button
+      <button 
         onClick={() =>
           i18n.language === "en"
             ? i18n.changeLanguage("de")
@@ -27,7 +28,7 @@ export default function AccesabilityButton(props) {
         }
         className={classes.language}
       >
-        <FaLanguage className={classes.icon} />
+        <MdLanguage aria-label="globe" className={classes.icon} />
       </button>
     );
 

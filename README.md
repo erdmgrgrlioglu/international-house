@@ -462,4 +462,33 @@ Here are some useful links to official documentation and resources for the techn
 
 ---
 
+## Additional Notes
+- **Initialization:**  
+  The system includes automatic **admin creation** at startup via the `AppInitializerServiceImpl`. Default admin credentials are fetched from environment variables.\
+  The application supports **CORS configurations** (`WebConfig.java`) for cross-origin requests, allowing frontend integrations.
+
+- **Error Handling:**  
+  The application employs an error-handling Spring Boot Starter that ensures consistent HTTP error codes and detailed error descriptions are returned.
+
+- **Security:**  
+  Robust security is enforced via modern authentication and authorization mechanisms, including JWT validation, Redis-backed session management, and Spring Security to protect endpoints from unauthorized access.
+
+- **Logging and Monitoring:**  
+  The application is production-ready with support for HTTP/2, comprehensive logging configurations, and Actuator endpoints for monitoring.
+
+- **Extensibility and Maintainability:**  
+  With a modular design and clearly separated concerns, the system is highly extensible and maintainable, facilitating the addition of new features and modifications with minimal impact on existing functionality.
+
+- **Kiosk Mode Browser:**
+Since there will be a self-service kiosk, consider running the web app in Chromium kiosk mode:
+```bash
+  chromium-browser --kiosk --incognito --disable-pinch --overscroll-history-navigation=0 http://localhost:3000
+```
+  For Windows you can use a shortcut of Chromium with a set Target field:
+   `"..\Chromium\Application\chrome.exe --kiosk --incognito --disable-pinch --overscroll-history-navigation=0 http://localhost:3000`
+  This removes UI controls like the address bar, tabs, and navigation buttons. It also disables the pinch-to-zoom and the swipe-to-navigate functionalities. To exit Kiosk Mode use `Alt + F4` or terminal/task manager to kill the process.
+  Be sure to auto-launch the browser in kiosk mode when the system starts.
+
+---
+
 This technical documentation details the structure and functioning of the International House Backend System, along with the necessary steps for local and containerized deployment. For any further questions, please contact the development or operations team.

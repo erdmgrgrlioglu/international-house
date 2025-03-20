@@ -4,10 +4,24 @@ import { FaInfoCircle } from "react-icons/fa";
 
 import { useDatabase, get, push } from "../../database/database";
 
-import { AccesabilityButton, Button, Modal } from "../../components";
+import { AccessibilityButton, Button, Modal } from "../../components";
 import Timeout from "../../components/timeout/Timeout";
 
 import classes from "./Booking.module.scss";
+
+export function getFormatedHourAndMinutes(start, end) {
+  start = new Date(start);
+  end = new Date(end);
+  return (
+    start.getHours().toString().padStart(2, "0") +
+    ":" +
+    start.getMinutes().toString().padStart(2, "0") +
+    " - " +
+    end.getHours().toString().padStart(2, "0") +
+    ":" +
+    end.getMinutes().toString().padStart(2, "0")
+  );
+}
 
 export default function BookingPage() {
   const [consultationEvents, setConsultationEvents] = useState([]);
@@ -16,34 +30,38 @@ export default function BookingPage() {
   const [selectedEvent, setSelectedEvent] = useState({});
   const [modal, setModal] = useState("");
 
-  const { t } = useTranslation(); // Get the translation function
+  const { t } = useTranslation();
 
   useDatabase(() => {
     get("consultation/events", false)
       .then((response) => {
         const events = [];
+        const today = new Date();
         response.forEach((event) => {
-          if (
-            event.repeat === "no" &&
-            new Date(event.startDate).getDate() === new Date().getDate()
-          )
+          const startDate = new Date(event.startDate);
+          const endDate = new Date(event.endDate);
+
+          if (event.repeat === "no" && startDate.toDateString() === today.toDateString()) {
             events.push(event);
+          }
 
-          if (event.repeat === "daily")
-            for (
-              let index = new Date(event.startDate);
-              index <= event.endDate;
-              index.setDate(index.getDate() + 1)
-            )
-              if (index.getDate() === new Date().getDate()) events.push(event);
+          if (event.repeat === "daily") {
+            for (let index = new Date(startDate); index <= endDate; index.setDate(index.getDate() + 1)) {
+              if (index.toDateString() === today.toDateString()) {
+                events.push(event);
+                break;
+              }
+            }
+          }
 
-          if (event.repeat === "weekly")
-            for (
-              let index = new Date(event.startDate);
-              index <= event.endDate;
-              index.setDate(index.getDate() + 7)
-            )
-              if (index.getDate() === new Date().getDate()) events.push(event);
+          if (event.repeat === "weekly") {
+            for (let index = new Date(startDate); index <= endDate; index.setDate(index.getDate() + 7)) {
+              if (index.toDateString() === today.toDateString()) {
+                events.push(event);
+                break;
+              }
+            }
+          }
         });
         setConsultationEvents(events);
       })
@@ -72,8 +90,8 @@ export default function BookingPage() {
   return (
     <div className={classes.page}>
       <Timeout />
-      <AccesabilityButton type="home" />
-      <AccesabilityButton type="language" />
+      <AccessibilityButton type="home" />
+      <AccessibilityButton type="language" />
 
       {modal === "info" && (
         <Modal
@@ -134,6 +152,7 @@ export default function BookingPage() {
             consultationEvents.map((event) => (
               <div className={classes.event} key={event.id}>
                 <FaInfoCircle
+                  aria-label="info"
                   className={classes.info}
                   onClick={() => {
                     setSelectedEvent(event);
@@ -171,18 +190,4 @@ export default function BookingPage() {
       )}
     </div>
   );
-
-  function getFormatedHourAndMinutes(start, end) {
-    start = new Date(start);
-    end = new Date(end);
-    return (
-      start.getHours().toString().padStart(2, "0") +
-      ":" +
-      start.getMinutes().toString().padStart(2, "0") +
-      " - " +
-      end.getHours().toString().padStart(2, "0") +
-      ":" +
-      end.getMinutes().toString().padStart(2, "0")
-    );
-  }
 }

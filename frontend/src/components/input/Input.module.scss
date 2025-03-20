@@ -12,7 +12,7 @@
   line-height: 1;
   text-transform: uppercase;
   overflow: hidden;
-
+  position: relative;
   color: map.get($colors, "def_light_red");
   border-color: map.get($colors, "def_light_red");
   background-color: transparent;
@@ -28,6 +28,12 @@
   background-color: map.get($colors, "def_light_red");
 }
 
+.inputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
 .field {
   width: 100%;
   margin: 0 0 0 10px !important;
@@ -37,10 +43,22 @@
   -moz-box-shadow: none;
   box-shadow: none;
   outline: none;
-
+  padding-right: 25px; // so that text doesn't overlap the icon
   font-size: 1rem;
   font-weight: bold;
   line-height: 1;
   //text-transform: uppercase;
   color: map.get($colors, "def_light_red");
+}
+
+.toggle {
+  background: transparent;
+  color: map.get($colors, "def_light_red");
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
 }

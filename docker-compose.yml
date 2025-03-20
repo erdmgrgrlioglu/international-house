@@ -5,7 +5,7 @@ services:
     build: 
       context: ./frontend # dockerfile relative path
       args:  # This is host machines (ip address):(backend port) in the local network. look up "ifconfig"
-        IP_AND_PORT: 10.42.0.1:8080 
+        IP_AND_PORT:  ${IP}:8080 # Assign ip to a variable in .env file
     restart: unless-stopped
     ports:
       - "3000:3000"  # Map port 3000 from host machine to 3000 on your container
