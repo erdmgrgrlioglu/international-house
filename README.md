@@ -554,6 +554,9 @@ Here are some useful links to official documentation and resources for the techn
 - **Extensibility and Maintainability:**  
   With a modular design and clearly separated concerns, the system is highly extensible and maintainable, facilitating the addition of new features and modifications with minimal impact on existing functionality.
 
+- **Jest Tests:**
+  To run the Jest tests for the frontend, navigate to the frontend folder and use the following command: `npm run test:jest`. The results will be shown in the terminal.
+
 - **Kiosk Mode Browser:**
 Since there will be a self-service kiosk, consider running the web app in Chromium kiosk mode:
 ```bash
@@ -568,7 +571,7 @@ Since there will be a self-service kiosk, consider running the web app in Chromi
 
 ---
 ## Quick Start
-Make sure Docker, PostgreSQL, and npm are installed on your system, and have Docker opened before proceeding. Create an .env file with your IPv4 and place it in the main folder or change the IP in the docker-compose file. Run the docker-compose services, then open a browser and navigate to `localhost:3000` or http://localhost:3000/dashboard.
+Make sure Docker, PostgreSQL, and npm are installed on your system, and have Docker opened before proceeding. Create an `.env` file with your IPv4 and place it in the main folder or change the IP in the docker-compose file. Run the docker-compose services, then open a browser and navigate to `localhost:3000` or http://localhost:3000/dashboard.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

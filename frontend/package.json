@@ -68,9 +68,6 @@
       "\\.(css|less)$": "<rootDir>/mocks/fileMock.js",
       "^@database/(.*)$": "<rootDir>/src/database/$1",
       "^@i18n$": "<rootDir>/src/i18n"
-    },
-    "setupFilesAfterEnv": [
-      "@testing-library/jest-dom"
-    ]
+    }
   }
 }

@@ -43,3 +43,15 @@ test('toggles sound on and off', () => {
   fireEvent.click(screen.getByText(/Sound: ON/i));
   expect(screen.getByText(/Sound: OFF/i)).toBeInTheDocument();
 });
+
+test('renders display page with visitors and consultations', async () => {
+  render(<DisplayPage />);
+  const titleElement = await screen.findByText(/Waiting Room Display/i);
+  expect(titleElement).toBeInTheDocument();
+  const calledElement = await screen.findByText(/Called/i);
+  expect(calledElement).toBeInTheDocument();
+  const consultation1Element = await screen.findByText(/Consultation 1/i);
+  expect(consultation1Element).toBeInTheDocument();
+  const consultation2Element = await screen.findByText(/2/i);
+  expect(consultation2Element).toBeInTheDocument();
+});
