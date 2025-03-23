@@ -26,7 +26,7 @@ export default function DashboardPage() {
   const [selectedTab, setSelectedTab] = useState(0);
   const [visitorCount, setVisitorCount] = useState(0);
 
-  const { t } = useTranslation(); // Get the translation function
+  const { t } = useTranslation();
 
   useDatabase(() => {
     get("visitors")

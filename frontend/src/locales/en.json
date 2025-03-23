@@ -10,7 +10,7 @@
     "username": "Username",
     "password": "Password",
     "next": "Next",
-    "errorMessage": "Username or Password is incorrect"
+    "errorMessage": "The user name or password is incorrect."
   },
   "dashboard": {
     "signedInAs": "Signed In As: ",
@@ -108,7 +108,7 @@
   "book": {
         "navbar": "Booking",
         "title": "Available Meetings Today",
-        "not_available": "There are currently no consultating options available. Visit Information for more.",
+        "not_available": "There are currently no consultations available. For more information about the consultation schedule, please visit the Information section on the home page.",
         "canceled": "Canceled",
         "in_queue": "You are in Queue",
         "code": "Your Code",
@@ -116,7 +116,7 @@
             "info": {
                 "title": "Consulting Details",
                 "reason": "Reason for Cancellation",
-                "no_reason": "No Reason Specified.", 
+                "no_reason": "No Reason Specified", 
                 "no_description": "No description available"
             },
             "confirm":{

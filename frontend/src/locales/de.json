@@ -1,7 +1,7 @@
 {
   "welcome": {
-    "navbar": "Internationales Haus",
-    "title": "Willkommen im Internationalen Haus der TU Darmstadt",
+    "navbar": "International House",
+    "title": "Willkommen in das International House der TU Darmstadt",
     "book_button": "Vereinbaren Sie einen Beratungstermin",
     "info_button": "Information"
   },
@@ -10,7 +10,7 @@
     "username": "Benutzername",
     "password": "Passwort",
     "next": "Weiter",
-    "errorMessage": "Benutzername oder Passwort ist falsch"
+    "errorMessage": "Der Benutzername bzw. das Kennwort ist falsch."
   },
   "dashboard": {
     "signedInAs": "Angemeldet als: ",
@@ -20,7 +20,7 @@
       "visitors": "Besucher",
       "manageUsers": "Benutzer verwalten",
       "manageConsultationHours": "Sprechstunden verwalten",
-      "manageInfoPage": "Info Seite verwalten",
+      "manageInfoPage": "Informationsseite verwalten",
       "changeLanguage": "English"
     }
   },
@@ -31,23 +31,23 @@
         "update": "Aktualisieren",
         "sure": "Sind Sie Sicher?"
       },
-      "description": "Erklärung",
+      "description": "Beschreibung",
       "start": "Beginnt",
       "end": "Endet",
       "repeat": {
         "title":"Wiederholung",
         "options": {
-          "no": "Keine Widerholung",
+          "no": "Keine Wiederholung",
           "daily": "Täglich",
           "weekly": "Wöchentich"
         }
       },
-      "consultation": "Beratungen",
+      "consultation": "Sprechstunde",
       "canceled": {
         "text":"Abgesagt",
         "reason":"Grund für die Stornierung",
         "no_reason": "Kein Grund.",
-        "result": "Das Löschen einer Beratung am selben Tag führt zur Stornierung.",
+        "result": "Das Löschen einer Sprechstunde am selben Tag führt zur Stornierung.",
         "deleteConfirm": "Möchten Sie diese Sprechstunde wirklich löschen?"
     }
   },
@@ -61,7 +61,7 @@
     },
     "today": "Heute",
     "back": "Zurück",
-    "next": "Nächster",
+    "next": "Weiter",
     "month": "Monat",
     "week": "Woche",
     "day": "Tag",
@@ -70,14 +70,14 @@
   },
 
   "consultationsPage": {
-    "description": "Erklärung",
+    "description": "Beschreibung",
     "shortVersion": "Abkürzung",
     "color": "Farbe",
     "defaultRoom":"Standardzimmer",
     "addDefault": "Standard Hinzufügen",
     "add": "Sprechstundentyp Hinzufügen",
     "edit": "Sprechstundetyp Bearbeiten",
-    "dailyVisitorCount":"Tägliche zahl der Besucher",
+    "dailyVisitorCount":"Tägliche Anzahl der Besucher",
     "totalVisitorCount":"Gesamtzahl der Besucher"
   },
   "userPage": {
@@ -92,12 +92,12 @@
   "visitorsPage": {
     "waiting": "Wartend",
     "called": "In einer Sprechstunde",
-    "call": "Reinrufen",
+    "call": "Einladen",
     "cancel": "Abbrechen",
     "delete": "Löschen",
     "no_visitor": "Derzeit sind keine Besucher in der Warteschlange",
     "inLineFor":"Wartet",
-    "beingCalled":"Reingerufen"
+    "beingCalled":"Eingeladen"
   },
   "button": {
     "create": "Erstellen",
@@ -107,20 +107,20 @@
   },
   "book": {
         "navbar": "Buchung",
-        "title": "Verfügbare Beratungen Heute",
-        "not_available": "Für heute ist derzeit keine Beratung geplant. Bitte beachten Sie die Informationen.",
+        "title": "Verfügbare Sprechstunden Heute",
+        "not_available": "Derzeit sind keine Sprechstunden geplant. Für weitere Informationen zum Sprechstundenplan besuchen Sie bitte den Informationsbereich auf der Startseite.",
         "canceled": "Abgesagt",
         "in_queue": "Sie sind in der Warteschlange",
-        "code": "Ihre Code Lautet",
+        "code": "Ihr Code Lautet",
         "modal": {
             "info": {
                 "title": "Beschreibung von der Beratung",
                 "reason": "Begründung für Absage",
-                "no_reason": "Kein Grund angegeben.", 
+                "no_reason": "Keine Begründung angegeben", 
                 "no_description": "Keine Beschreibung angegeben"
             },
             "confirm":{
-                "title": "Buchung Bestaetigen",
+                "title": "Buchung Bestätigen",
                 "request": "Sie haben eine Beratung angefragt bei",
                 "proceed": "Möchten Sie wirklich fortfahren?",
                 "yes_button": "Ja",

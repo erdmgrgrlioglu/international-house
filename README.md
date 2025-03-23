@@ -1,4 +1,4 @@
-# International House Management Software – Technical Documentation
+# International House Digital Check-in and Visitor Guidance System – Technical Documentation
 
 This documentation provides a comprehensive overview of the project, its architecture, key components, and steps for local execution. It serves as the central source of information for developers, administrators, and stakeholders.
 
@@ -19,16 +19,58 @@ This documentation provides a comprehensive overview of the project, its archite
             - [Controller-Service-Entity Layers](#controller-service-entity-layers)
             - [Error Handling](#error-handling)
     - [Docker Environment](#docker-environment)
-
+    - [Planned Features](#planned-features)
+    - [Unfinished Stories](#unfinished-stories)
 4. [Additional Notes](#additional-notes)
+5. [Quick Start](#quick-start)
+6. [License](#license)
 
 ---
 
 ## Overview
 
-Developed by a small team of computer scientists in TU Darmstadt in 2024-2025. (see contributions)
+Developed by a small team of computer scientists in TU Darmstadt in 2024-2025.
+<br/>
+<div style="display: flex; gap: 20px; text-align: center;">
+  <div>
+    <a href="https://github.com/erdmgrgrlioglu">
+      <img src="https://github.com/erdmgrgrlioglu.png" alt="Avatar" style="width:60px; height:60px; border-radius:50%;">
+    </a>
+    </br>
+    <a href="https://github.com/erdmgrgrlioglu">@erdmgrgrlioglu</a>
+  </div>
+    <div>
+    <a href="https://github.com/aswiso">
+      <img src="https://github.com/aswiso.png" alt="Avatar" style="width:60px; height:60px; border-radius:50%;">
+    </a>
+    </br>
+    <a href="https://github.com/aswiso">@aswiso</a>
+  </div>
+    <div>
+    <a href="https://github.com/theBulut">
+      <img src="https://github.com/theBulut.png" alt="Avatar" style="width:60px; height:60px; border-radius:50%;">
+    </a>
+    </br>
+    <a href="https://github.com/theBulut">@theBulut</a>
+  </div>
+  <div>
+    <a href="https://github.com/namik0734">
+      <img src="https://github.com/namik0734.png" alt="Avatar" style="width:60px; height:60px; border-radius:50%;">
+    </a>
+    </br>
+    <a href="https://github.com/namik0734">@namik0734</a>
+  </div>
+  <div>
+    <a href="https://github.com/Periskl"> 
+      <img src="https://github.com/Periskl.png" alt="Avatar" style="width:60px; height:60px; border-radius:50%;">
+    </a>
+    </br>
+    <a href="https://github.com/Periskl">@Periskl</a>
+  </div>
+</div>
+</br>
 
-The **International House Managament Software** is a full stack web application that manages employees, visitors, and consultations that International House of TU Darmstadt provides. It also has multilingual support. Many modern design patterns and technologies have been used throughout the development to ensure security, scalability, and maintainability.
+The **International House Digital Check-in and Visitor Guidance System** is a full stack web application that manages employees, visitors, and consultations that International House of TU Darmstadt provides. It also has multilingual support. Many modern design patterns and technologies have been used throughout the development to ensure security, scalability, and maintainability.
 
 ---
 
@@ -79,6 +121,8 @@ Confirm containers are running:
 docker stats
 ```
 After successfully running the `docker-compose.yml` file, visit `http://localhost:3000` or `http://[YOUR-HOST-MACHINE-IPv4-ADDRESS]:3000` in your browser to view the website.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
 
@@ -414,9 +458,40 @@ This section outlines planned features and improvements for the project. These r
 3. **Secure HTTP Protocol (HTTPS):**  
    The current setup does not utilize HTTPS, which exposes it to potential Session Hijacking, Eavesdropping or Man-in-the-Middle (MITM) attacks. Implementing HTTPS is essential to secure data transmission and prevent such vulnerabilities.
 
-4. **UI Rework:**  
-   Revise the user interface to eliminate visual artifacts, refine the overall design, and enhance mobile responsiveness for a better user experience.
+### Unfinished Stories
+- **Building 3D Model:** As a visitor, I want to see the layout of the rooms so that I can better orient myself to my room.
+    
+- **Adding Rooms to Consultation Hours:** As an employee, I want to to choose in which room a consultation takes place – either as free text or in a selection list.
+    
+- **Default Room for Consultation Hours:** As an employee, I want to set a default room for each consultation so that I don’t have to select a room every time.
+    
+- **Show Current Day on Homepage:** As a visitor, I want to see which day the displayed consultation hours apply to.
+    
+- **Number on Tablet:** As an employee, I want to display a number to waiting visitors to guide them to my office, with a click on a number or name enlarging it to full screen.
+    
+- **Export Data/Calendar:** As an administrator, I want to securely export my data as a backup to prevent data loss.
+    
+- **Consultation Hours: Last Modified By:** As an employee, I want to see who last edited a consultation hour by introducing a log system.
+    
+- **Waiting Screen During Breaks:** As a visitor, I want to immediately see why no consultation hours are currently taking place (e.g. during holidays) by displaying a customizable pause screen.
+    
+- **Consultation Hours: How Far in Advance Can They Be Booked:** As an employee/administrator, I want to define how far in advance a consultation can be booked.
+    
+- **Accessibility Features:** As a visitor with disabilities, I want to be able to read the consultation hour screen and make a booking, with the ability to increase or decrease text size.
+    
+- **Filter Consultation Hours:** As an employee, I want to filter the queue page to display only visitors of a specific consultation type.
+    
+- **Export Statistical Data:** As an employee, I want to export daily visitor statistics in Excel format.
+    
+- **Notice for Visitors:** As a visitor, I want to receive a notice if necessary to ask questions at the reception.
+    
+- **Change Notification Sound:** As an administrator, I want the ability to change the notification sound.
+    
+- **Edit Consultation Hours Without Affecting Others:** As an employee, I want to edit consultation hours without affecting other appointments in the same cycle.
+    
+- **Adjust Timeout Duration as Admin:** As an administrator, I want to be able to set the timeout duration individually.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Additional Notes
 - **Initialization:**  
@@ -479,6 +554,9 @@ Here are some useful links to official documentation and resources for the techn
 - **Extensibility and Maintainability:**  
   With a modular design and clearly separated concerns, the system is highly extensible and maintainable, facilitating the addition of new features and modifications with minimal impact on existing functionality.
 
+- **Jest Tests:**
+  To run the Jest tests for the frontend, navigate to the frontend folder and use the following command: `npm run test:jest`. The results will be shown in the terminal.
+
 - **Kiosk Mode Browser:**
 Since there will be a self-service kiosk, consider running the web app in Chromium kiosk mode:
 ```bash
@@ -489,6 +567,23 @@ Since there will be a self-service kiosk, consider running the web app in Chromi
   This removes UI controls like the address bar, tabs, and navigation buttons. It also disables the pinch-to-zoom and the swipe-to-navigate functionalities. To exit Kiosk Mode use `Alt + F4` or terminal/task manager to kill the process.
   Be sure to auto-launch the browser in kiosk mode when the system starts.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+## Quick Start
+Make sure Docker, PostgreSQL, and npm are installed on your system, and have Docker opened before proceeding. Create an `.env` file with your IPv4 and place it in the main folder or change the IP in the docker-compose file. Run the docker-compose services, then open a browser and navigate to `localhost:3000` or http://localhost:3000/dashboard.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+## License
+
+Distributed under the Apache License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ---
 
 This technical documentation details the structure and functioning of the International House Backend System, along with the necessary steps for local and containerized deployment. For any further questions, please contact the development or operations team.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
