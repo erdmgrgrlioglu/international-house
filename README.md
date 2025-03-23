@@ -1,4 +1,4 @@
-# International House Management Software – Technical Documentation
+# International House Digital Check-in and Visitor Guidance System – Technical Documentation
 
 This documentation provides a comprehensive overview of the project, its architecture, key components, and steps for local execution. It serves as the central source of information for developers, administrators, and stakeholders.
 
@@ -23,14 +23,54 @@ This documentation provides a comprehensive overview of the project, its archite
     - [Unfinished Stories](#unfinished-stories)
 4. [Additional Notes](#additional-notes)
 5. [Quick Start](#quick-start)
+6. [License](#license)
 
 ---
 
 ## Overview
 
-Developed by a small team of computer scientists in TU Darmstadt in 2024-2025. (see contributions)
+Developed by a small team of computer scientists in TU Darmstadt in 2024-2025.
+<br/>
+<div style="display: flex; gap: 20px; text-align: center;">
+  <div>
+    <a href="https://github.com/erdmgrgrlioglu">
+      <img src="https://github.com/erdmgrgrlioglu.png" alt="Avatar" style="width:60px; height:60px; border-radius:50%;">
+    </a>
+    </br>
+    <a href="https://github.com/erdmgrgrlioglu">@erdmgrgrlioglu</a>
+  </div>
+    <div>
+    <a href="https://github.com/aswiso">
+      <img src="https://github.com/aswiso.png" alt="Avatar" style="width:60px; height:60px; border-radius:50%;">
+    </a>
+    </br>
+    <a href="https://github.com/aswiso">@aswiso</a>
+  </div>
+    <div>
+    <a href="https://github.com/theBulut">
+      <img src="https://github.com/theBulut.png" alt="Avatar" style="width:60px; height:60px; border-radius:50%;">
+    </a>
+    </br>
+    <a href="https://github.com/theBulut">@theBulut</a>
+  </div>
+  <div>
+    <a href="https://github.com/namik0734">
+      <img src="https://github.com/namik0734.png" alt="Avatar" style="width:60px; height:60px; border-radius:50%;">
+    </a>
+    </br>
+    <a href="https://github.com/namik0734">@namik0734</a>
+  </div>
+  <div>
+    <a href="https://github.com/Periskl"> 
+      <img src="https://github.com/Periskl.png" alt="Avatar" style="width:60px; height:60px; border-radius:50%;">
+    </a>
+    </br>
+    <a href="https://github.com/Periskl">@Periskl</a>
+  </div>
+</div>
+</br>
 
-The **International House Managament Software** is a full stack web application that manages employees, visitors, and consultations that International House of TU Darmstadt provides. It also has multilingual support. Many modern design patterns and technologies have been used throughout the development to ensure security, scalability, and maintainability.
+The **International House Digital Check-in and Visitor Guidance System** is a full stack web application that manages employees, visitors, and consultations that International House of TU Darmstadt provides. It also has multilingual support. Many modern design patterns and technologies have been used throughout the development to ensure security, scalability, and maintainability.
 
 ---
 
@@ -81,6 +121,8 @@ Confirm containers are running:
 docker stats
 ```
 After successfully running the `docker-compose.yml` file, visit `http://localhost:3000` or `http://[YOUR-HOST-MACHINE-IPv4-ADDRESS]:3000` in your browser to view the website.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ---
 
@@ -449,6 +491,8 @@ This section outlines planned features and improvements for the project. These r
     
 - **Adjust Timeout Duration as Admin:** As an administrator, I want to be able to set the timeout duration individually.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## Additional Notes
 - **Initialization:**  
   The system includes automatic **admin creation** at startup via the `AppInitializerServiceImpl`. Default admin credentials are fetched from environment variables.\
@@ -520,10 +564,23 @@ Since there will be a self-service kiosk, consider running the web app in Chromi
   This removes UI controls like the address bar, tabs, and navigation buttons. It also disables the pinch-to-zoom and the swipe-to-navigate functionalities. To exit Kiosk Mode use `Alt + F4` or terminal/task manager to kill the process.
   Be sure to auto-launch the browser in kiosk mode when the system starts.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ---
 ## Quick Start
 Make sure Docker, PostgreSQL, and npm are installed on your system, and have Docker opened before proceeding. Create an .env file with your IPv4 and place it in the main folder or change the IP in the docker-compose file. Run the docker-compose services, then open a browser and navigate to `localhost:3000` or http://localhost:3000/dashboard.
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+## License
+
+Distributed under the Apache License. See `LICENSE.txt` for more information.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ---
 
 This technical documentation details the structure and functioning of the International House Backend System, along with the necessary steps for local and containerized deployment. For any further questions, please contact the development or operations team.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
